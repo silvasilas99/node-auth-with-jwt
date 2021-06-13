@@ -1,0 +1,19 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const app = express();
+
+// Bodyparser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// DB Config
+const db = require('./config/keys').mongoURI;
+
+// Connect to DB
+mongoose
+    .connect(db, { useNewUrlParser: true })
+    .then(() => console.log("DataBase connected with success"))
+    .catch(err => console.log(err));
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`Server up and running on port ${port}!`));
