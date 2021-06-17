@@ -5,16 +5,16 @@ import './App.css';
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
-import Login from "./components/auth/Login"
+import Login from "./components/auth/Login" 
 class App extends Component {
   render () {
     return (
       <Router>
         <div className="App">
           <Navbar />
-          <Router exact path="/" component={Landing} />
-          <Router exact path="/register" component={Register} />
-          <Router exact path="/login" component={Login} />
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
         </div> 
       </Router>
     );
